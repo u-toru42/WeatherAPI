@@ -1,2 +1,2 @@
 weather-forcast.comのAPIを使い、OpenWeatherMapより、天気情報のJSONデータを取得する
-MAMP/htdocsで起動
+MAMP/apiで起動
