@@ -10,7 +10,7 @@
         $weatherArray = json_decode($urlContents,true);
         
         //print_r($weatherArray);
-        $weather = $_GET['city']."の天気:".$weatherArray['weather'][0]['main'].",".$weatherArray['weather'][0]['description'];
+        $weather = $_GET['city'].":".$weatherArray['weather'][0]['main'].",".$weatherArray['weather'][0]['description'];
     }
 
 
