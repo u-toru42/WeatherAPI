@@ -1,11 +1,10 @@
 <?php
-    #weather情報を初期化し、空にする
+    
     $weather = "";
-    #error情報を初期化し、空にする
     $error = "";
-    #_GET(フォームから送信されるデータを格納するグローバル変数,<form>でmethod属性を指定せず,$_GETでデータを受け取る送信できるデータはテキストだけ、送信できる情報量に制限あり)'city'というキーをもっているデータが有るかどうか,もしもキーが有れば、()の中の処理をする
+    
     if (array_key_exists('city', $_GET)) {
-        #file_get_contents(URLにアクセスしてデータを取得する)、出力された都市名を.$_GET[].と置き換え、以下は一度検索してから&以降のデータで引き出す
+        
         $urlContents = file_get_contents("https://samples.openweathermap.org/data/2.5/weather?q=".$_GET['city']."&appid=d9bcc814da55a18c8420be97e96cf02d");
         
         $weatherArray = json_decode($urlContents,true);
@@ -17,7 +16,7 @@
 
 ?>
 
-  <!-- bootstrapから -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

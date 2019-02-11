@@ -17,7 +17,7 @@
 
 ?>
 
-  <!-- bootstrapから -->
+#bootstrapから
 <!DOCTYPE html>
 <html lang="en">
   <head>
