@@ -6,11 +6,11 @@
     #_GET(フォームから送信されるデータを格納するグローバル変数,<form>でmethod属性を指定せず,$_GETでデータを受け取る送信できるデータはテキストだけ、送信できる情報量に制限あり)'city'というキーをもっているデータが有るかどうか,もしもキーが有れば、()の中の処理をする
     if (array_key_exists('city', $_GET)) {
         #file_get_contents(URLにアクセスしてデータを取得する)、出力された都市名を.$_GET[].と置き換え、以下は一度検索してから&以降のデータで引き出す
-        $urlContents = file_get_contents("https://samples.openweathermap.org/data/2.5/weather?q=".$_GET['city']."&appid=d9bcc814da55a18c8420be97e96cf02d");
-        
+        $urlContents = file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".$_GET['city']."&appid=d9bcc814da55a18c8420be97e96cf02d");
+        #JSONデータから連想配列キーを付けた状態で取り出す,引数を連想配列にする指示=true
         $weatherArray = json_decode($urlContents,true);
         
-        //print_r($weatherArray);
+        #検索窓下にデータを入れ、表示するように設定
         $weather = $_GET['city'].":".$weatherArray['weather'][0]['main'].",".$weatherArray['weather'][0]['description'];
     }
 
